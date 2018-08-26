@@ -1,0 +1,18 @@
+spring:
+  profiles:
+    active: composite
+encrypt
+  key:secretkey
+  cloud:
+    config:
+      server:
+        encrypt:false
+        composite:
+        -
+          type: git
+          uri: https://github.com/sheekaat/peer-config.git
+        -
+          type: git
+          uri: https://github.com/sheekaat/{application}-{profile}.git
+          
+       
